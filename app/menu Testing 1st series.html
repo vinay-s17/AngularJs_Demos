@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+
+<head>
+     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head
+         content must come *after* these tags -->
+    <title>Ristorante Con Fusion: Menu</title>
+        <!-- Bootstrap -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="styles/bootstrap-social.css" rel="stylesheet">
+    <link href="styles/mystyles.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	
+<![endif]-->
+<script src="../bower_components/angular/angular.min.js">	</script>
+
+</head>
+
+<body>
+<div ng-init="dishes=[
+	{name: 'Non veg Pizza 1', price: '155.00', image: 'images/uthapizza.png'},
+	{name: 'Non veg Pizza 2', price: '255.00', image: 'images/uthapizza.png'},
+	{name: 'Non veg Pizza 3', price: '355.00', image: 'images/uthapizza.png'}
+]
+"> 
+    <div class="container">
+        <div class="row row-content">
+            <div class="col-xs-12">
+			<input type="text" ng-model="iptext"/>
+
+<img ng-src={{dishes[1].image}} alt="pizza"/>
+<p> Welcome Mr. {{iptext}} Pizza:  {{dishes[2].name}} prize is {{dish.price}} </p>
+            </div>
+
+<div class="row row-content" >
+<ul>
+
+<li ng-repeat="dish in dishes | orderBy:'-price'">
+<img ng-src="{{dish.image}}" alt="dishe image"/>
+<b><p>Dish name is {{dish.name + '. Prize is ' + dish.price}}</p>
+<br/>
+<p> {{dish.price| currency}} </p>
+</li>
+<br/>
+</ul>
+</div>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+
+</html>
